@@ -1,42 +1,22 @@
-<body>
-  <div class="login-container text-center" card>
+<div class="login-container">
+  <div class="login-card">
     <div class="login-header">
-      <p-card>
-          <div class=" login-input">
-            <div class="grid-col-12">
-              <label for="nome">Nome:</label>
-              <input class="login-label" type="text" pInputText name="nome" id="nome" />
-            </div>
-            <div class="grid-col-12">
-              <label for="idade">Idade:</label>
-              <input class="login-label" type="text" pInputText name="idade" id="idade" />
-            </div>
-            <div class="grid-col-12">
-              <label for="email">E-mail:</label>
-              <input class="login-label" type="text" pInputText name="email" id="email" />
-            </div>
-            <div class="grid-col-12">
-              <label for="localidade">Localidade:</label>
-              <input class="login-label" type="text" pInputText name="localidade" id="localidade" />
-            </div>
-            <div class="grid-col-12">
-              <label for="usuario">Usuário (para acessar com login):</label>
-              <input class="login-label" type="text" pInputText name="usuario" id="usuario" />
-            </div>
-            <div class="grid-col-12">
-              <label for="senha">Senha:</label>
-              <input class="login-label" type="password" pInputText name="senha" id="senha" />
-            </div>
-            <div class="grid-col-12">
-              <label for="confirmacao-senha">Confirmação da Senha:</label>
-              <input class="login-label" type="password" pInputText name="confirmacao-senha" id="confirmacao-senha" />
-            </div>
-          </div>
-          <div class="grid-col-12">
-            <button pButton type="button" label="Entrar" class="btn-entrar"></button>
-          </div>
-
-      </p-card>
+      <h2>Cadastro</h2>
+    </div>
+    <div class="login-input">
+      <label for="nome" class="login-label">Nome:</label>
+      <input type="text" pInputText name="nome" id="nome" [(ngModel)]="nome" class="login-field" />
+      <label for="idade" class="login-label">Idade:</label>
+      <input type="text" pInputText name="idade" id="idade" [(ngModel)]="idade" class="login-field" />
+      <label for="email" class="login-label">E-mail:</label>
+      <input type="text" pInputText name="email" id="email" [(ngModel)]="email" class="login-field" />
+      <label for="usuario" class="login-label">Usuário(para acessar com login):</label>
+      <input type="text" pInputText name="usuario" id="usuario" [(ngModel)]="usuario" class="login-field" />
+      <label for="senha" class="login-label">Senha:</label>
+      <input type="password" pInputText name="senha" id="senha" [(ngModel)]="senha" class="login-field" />
+    </div>
+    <div class="grid-col-12">
+      <button pButton type="button" label="Salvar" class="login-button" (click)="fazerCadastro()"></button>
     </div>
   </div>
-</body>
+</div>

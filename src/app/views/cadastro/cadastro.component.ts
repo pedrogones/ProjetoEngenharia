@@ -7,16 +7,23 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./cadastro.component.scss']
 })
 export class CadastroComponent implements OnInit {
-  constructor(private router: Router, private route: ActivatedRoute) {}
+  nome!: string;
+idade!: string;
+email!: string;
 usuario!: string;
 senha!: string;
+  constructor(private router: Router, private route: ActivatedRoute) {}
+
   ngOnInit(): void {}
 
   // Função para lidar com o clique no botão de login
-  fazerLogin(): void {
-    console.log('Usuário: ', this.usuario);
+  fazerCadastro(): void {
+    console.log('Nome: ', this.nome);
+    console.log('Senha: ', this.idade);
+    console.log('email: ', this.email);
+    console.log('Users: ', this.usuario);
     console.log('Senha: ', this.senha);
-    // Aqui você pode realizar a lógica de autenticação
+    // Aqui você pode realizar a lógica de cadastramento
   }
   putDataBase(){
 

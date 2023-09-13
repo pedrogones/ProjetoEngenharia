@@ -3,44 +3,56 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: auto;
   background-color: #f2f2f2;
 }
 
 /* Estilo para o cartão de login */
 .login-card {
-  background-color: #fff;
+  background-color: #f2f2f2;
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   max-width: 400px;
   width: 100%;
+  height: auto;
+  display: flex; /* Adiciona display flex */
+  flex-direction: column; /* Alinha os elementos em uma coluna */
+  align-items: center; /* Centraliza verticalmente */
 }
+
 
 /* Estilo para o cabeçalho do formulário */
 .login-header {
   text-align: center;
   margin-bottom: 20px;
+  height: auto;
 }
 
 .login-header h2 {
   font-size: 24px;
   color: #333;
 }
+.login-input{
+align-items: center;
+width: 400px;
+}
 
 /* Estilo para os rótulos dos campos */
 .login-label {
   font-weight: bold;
   color: #555;
+
 }
 
 /* Estilo para os campos de entrada de texto */
-.login-input {
+.login-field {
   width: 100%;
   padding: 10px;
   margin-bottom: 15px;
   border: 1px solid #ccc;
   border-radius: 3px;
+  outline: none;
 }
 
 /* Estilo para o botão de envio */
@@ -59,6 +71,7 @@
   background-color: #0056b3;
 }
 
+
 /* Estilo para mensagens de erro */
 .error-message {
   color: #ff0000;
@@ -73,9 +86,10 @@
   color: #777;
 }
 
-.card{
+.card {
   margin-top: 4em;
 }
+
 /* Estilização dos rótulos e campos de entrada */
 label {
   display: block;
@@ -92,10 +106,7 @@ input[type="password"] {
   border-radius: 3px;
   outline: none;
 }
-.fontText{
-  font-style: normal;
-  font-size: 4em;
-}
+
 /* Estilização do botão (você pode adicionar um botão na seção HTML vazia) */
 button {
   background-color: #007bff;
@@ -106,6 +117,7 @@ button {
   cursor: pointer;
   transition: background-color 0.2s;
 }
+
 button:hover {
   background-color: #0056b3;
 }
