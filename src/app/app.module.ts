@@ -8,16 +8,32 @@ import { LoginComponent } from './views/login/login.component';
 import { CardModule } from 'primeng/card';
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { CadastroComponent } from './views/cadastro/cadastro.component';
+import { HomeComponent } from './views/home/home.component';
+import { MatIconModule } from '@angular/material/icon';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatMenuModule} from '@angular/material/menu';
+import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog.component';
+
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    CadastroComponent,
+    HomeComponent,
+    ConfirmationDialogComponent,
   ],
   imports: [
     BrowserModule,
+    MatIconModule,
+    ReactiveFormsModule,
+    MatDialogModule,
+    MatMenuModule,
     FormsModule,
+    MatToolbarModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     CardModule,
