@@ -21,6 +21,9 @@ menuOpen$ = this.menuOpenSubject.asObservable();
   redirectHome():void{
     this.router.navigate([''], {relativeTo: this.route});
   }
+  redirectLogin():void{
+    this.router.navigate(['login'], {relativeTo: this.route});
+  }
   toggleMenu():void{
     this.menuOpenSubject.next();// Abre o menu ao clicar no ícone do menu
   }

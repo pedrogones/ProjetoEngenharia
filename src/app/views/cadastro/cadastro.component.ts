@@ -6,8 +6,8 @@ import { SharedService } from 'src/app/shared.service';
 import { MatMenuTrigger } from '@angular/material/menu';
 import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { ConfirmationDialogComponent } from 'src/app/confirmation-dialog/confirmation-dialog.component';
+import { AuthService } from 'src/app/auth-service.service';
 //import { MeuDialogComponent } from '../meu-dialog/meu-dialog.component'; // Certifique-se de usar o caminho correto
-
 
 @Component({
   selector: 'app-cadastro',
@@ -15,6 +15,7 @@ import { ConfirmationDialogComponent } from 'src/app/confirmation-dialog/confirm
   styleUrls: ['./cadastro.component.scss']
 })
 export class CadastroComponent implements OnInit {
+
   nome!: string;
   idade!: string;
   email!: string;
@@ -25,7 +26,8 @@ export class CadastroComponent implements OnInit {
   constructor(private router: Router,
      private route: ActivatedRoute,
      private sharedService: SharedService,
-     private dialog: MatDialog
+     private dialog: MatDialog,
+     private authService: AuthService
      ) {
   }
   @ViewChild('menuButton')
@@ -46,6 +48,7 @@ export class CadastroComponent implements OnInit {
       console.log('Email: ', this.email);
       console.log('Usuário: ', this.usuario);
       console.log('Senha: ', this.senha);
+      this.authService.addUser(this.usuario, this.senha);
     } else {
       this.openDialog("Preencha todos os campos e selecione a opção 'Paciente' ou 'Médico'");
     }
@@ -56,7 +59,9 @@ export class CadastroComponent implements OnInit {
     if (selectedRoleElement) {
       const selectedRole = selectedRoleElement.value;
       console.log(selectedRole + ' selecionado');
+      this.redirectLogin();
       return selectedRole === 'medico' || selectedRole === 'paciente';
+
     } else {
       console.log("Nenhuma opção selecionada");
       return false;
@@ -67,6 +72,9 @@ export class CadastroComponent implements OnInit {
   }
   redirectHome(): void {
     this.sharedService.redirectHome();
+  }
+  redirectLogin(): void {
+this.sharedService.redirectLogin();
   }
   toggleMenu(): void {
     this.menuButton.openMenu(); // Abre o menu ao clicar no ícone do menu
